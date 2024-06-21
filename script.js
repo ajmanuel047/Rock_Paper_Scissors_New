@@ -4,3 +4,7 @@ function getComputerChoice() {
     return arr[randomValue]
 }
 
+function getHumanChoice(){
+    let userChoice = prompt('Rock, Paper, or Scissors')
+    return userChoice
+}
