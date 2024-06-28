@@ -6,18 +6,15 @@ let drawScore = 0;
 function getComputerChoice() {
     let arr = ['rock', 'paper', 'scissors'];
     let randomValue = Math.floor(Math.random(arr[arr.length - 1]) * arr.length)
-    console.log(arr[randomValue])
+    console.log(`Computer's Pick: ${arr[randomValue]}`)
     return arr[randomValue]
 }
 
 function getHumanChoice() {
     let userChoice = prompt('Enter a value')
-    console.log(userChoice)
+    console.log(`My Pick: ${userChoice}`)
     return userChoice
 }
-
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
 
 function playRound(humanChoice, computerChoice) {
     let humanChoiceToLowerCase = humanChoice.toLowerCase()
@@ -52,11 +49,12 @@ function playRound(humanChoice, computerChoice) {
 
 function playGame() {
 
-    for (let i = 1; i < 5; i++) {
+    for (let i = 1; i < 6; i++) {
         playRound(getHumanChoice(), getComputerChoice())
         console.log(`HumanScore: ${humanScore}`)
         console.log(`ComputerScore: ${computerScore}`)
         console.log(`DrawScore: ${drawScore}`)
+
     }
 }
 
