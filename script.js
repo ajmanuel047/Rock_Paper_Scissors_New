@@ -59,5 +59,4 @@ function playGame() {
 }
 
 playGame()
-// console.log(`My Pick: ${getHumanChoice()}`)
-// console.log(`Computer's Pick: ${getComputerChoice()}`)
+
