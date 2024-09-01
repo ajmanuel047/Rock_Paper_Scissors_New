@@ -48,14 +48,16 @@ function playRound(humanChoice, computerChoice) {
 
 
 function playGame() {
-
+    console.clear()
     for (let i = 1; i < 6; i++) {
+        console.log(`Round : ${i}`)
         playRound(getHumanChoice(), getComputerChoice())
         console.log(`HumanScore: ${humanScore}`)
         console.log(`ComputerScore: ${computerScore}`)
         console.log(`DrawScore: ${drawScore}`)
-
+        console.log('-------------------'); // Separator for clarity
     }
+    
 }
 
 playGame()
