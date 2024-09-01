@@ -50,15 +50,24 @@ function playRound(humanChoice, computerChoice) {
 function playGame() {
     console.clear()
     for (let i = 1; i < 6; i++) {
-        console.log(`Round : ${i}`)
+        
         playRound(getHumanChoice(), getComputerChoice())
         console.log(`HumanScore: ${humanScore}`)
         console.log(`ComputerScore: ${computerScore}`)
         console.log(`DrawScore: ${drawScore}`)
+        console.log(`Round : ${i}`)
         console.log('-------------------'); // Separator for clarity
     }
-    
+    if(humanScore > computerScore){
+        console.log('You WIN!')
+    }else if(computerScore > humanScore){
+        console.log('You Lose')
+        console.log('AI WINS')
+    }else{
+        console.log('This Game Ended In A Draw')
+    }
 }
+
 
 playGame()
 
