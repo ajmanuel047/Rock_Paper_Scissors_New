@@ -1,11 +1,13 @@
 let humanScore = 0;
 let computerScore = 0;
 let drawScore = 0;
+let numberofRounds = 0;
 let rockBtn = document.getElementById('rock');
 let paperBtn = document.getElementById('paper');
 let scissorsBtn = document.getElementById('scissors');
 let output = document.getElementById('output');
-
+let rounds = document.getElementById('rounds');
+let roundsOutput = document.getElementById('roundOupt');
 
 rockBtn.addEventListener('click', (e) => {
     let humanChoice = e.target.id
@@ -38,33 +40,54 @@ function playRound(humanChoice, computerChoice) {
     let win = 'You Win!';
     let draw = 'Draw!'
     if (humanChoice == computerChoice) {
-        drawScore++
+        numberofRounds++;
+        drawScore++;
         output.textContent = draw;
-        document.body.appendChild(output)
+        document.body.appendChild(output);
+        roundsOutput.textContent = `${numberofRounds}`;
+        rounds.appendChild(roundsOutput);
     }
     if (humanChoice == 'rock' && computerChoice == 'scissors') {
         output.textContent = `You Win: ${humanChoice} crushes ${computerChoice}`;
         document.body.appendChild(output);
-        humanScore++
+        numberofRounds++;
+        humanScore++;
+        roundsOutput.textContent = `${numberofRounds}`;
+        rounds.appendChild(roundsOutput);
     } else if (humanChoice == 'rock' && computerChoice == 'paper') {
         output.textContent = `You lose: ${computerChoice} covers ${humanChoice}`;
         document.body.appendChild(output)
-        computerScore++
+        numberofRounds++;
+        computerScore++;
+        roundsOutput.textContent = `${numberofRounds}`;
+        rounds.appendChild(roundsOutput);
     } else if (humanChoice == 'paper' && computerChoice == 'rock') {
         output.textContent = `You Win: ${humanChoice} covers ${computerChoice}`;
-        document.body.appendChild(output)
-        humanScore++
+        document.body.appendChild(output);
+        numberofRounds++;
+        humanScore++;
+        roundsOutput.textContent = `${numberofRounds}`;
+        rounds.appendChild(roundsOutput);
     } else if (humanChoice == 'paper' && computerChoice == 'scissors') {
         output.textContent = `You lose: ${computerChoice} cuts ${humanChoice}`;
         document.body.appendChild(output)
-        computerScore++
+        numberofRounds++;
+        computerScore++;
+        roundsOutput.textContent = `${numberofRounds}`;
+        rounds.appendChild(roundsOutput);
     } else if (humanChoice == 'scissors' && computerChoice == 'paper') {
         output.textContent = `You Win: ${humanChoice} cuts ${computerChoice}`;
         document.body.appendChild(output)
-        humanScore++
+        numberofRounds++;
+        humanScore++;
+        roundsOutput.textContent = `${numberofRounds}`;
+        rounds.appendChild(roundsOutput);
     } else if (humanChoice == 'scissors' && computerChoice == 'rock') {
        output.textContent = `You lose: ${computerChoice} crushes ${humanChoice}`;
-        computerScore++
+       numberofRounds++; 
+       computerScore++;
+       roundsOutput.textContent = `${numberofRounds}`;
+       rounds.appendChild(roundsOutput);
     }
 }
 
