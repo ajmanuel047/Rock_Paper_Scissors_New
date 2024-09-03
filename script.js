@@ -3,17 +3,21 @@ let computerScore = 0;
 let drawScore = 0;
 let rockBtn = document.getElementById('rock');
 let paperBtn = document.getElementById('paper');
-
+let scissorsBtn = document.getElementById('scissors')
 rockBtn.addEventListener('click', (e) => {
     let humanChoice = e.target.id
-    playRound(humanChoice, getComputerChoice())
+    playRound(humanChoice, getComputerChoice());
 })
 
 paperBtn.addEventListener('click', (e) => {
     let humanChoice = e.target.id;
-    playRound(humanChoice, getComputerChoice())
+    playRound(humanChoice, getComputerChoice());
 })
 
+scissorsBtn.addEventListener('click', (e) => {
+    let humanChoice = e.target.id;
+    playRound(humanChoice, getComputerChoice());
+})
 
 function playRound(humanChoice, computerChoice) {
     console.log(`My choice : ${humanChoice}`);
