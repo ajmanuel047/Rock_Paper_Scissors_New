@@ -15,21 +15,7 @@ let finalWinner = document.getElementById('finalWinner');
 rockBtn.addEventListener('click', (e) => {
     let humanChoice = e.target.id
     playRound(humanChoice, getComputerChoice());
-    if(numberofRounds == 5){
-        rockBtn.disabled = true;
-        paperBtn.disabled = true;
-        scissorsBtn.disabled = true;
-        if(humanScore > computerScore){
-            finalWinner.textContent = 'Game Over : You WIN!'
-            document.body.appendChild(finalWinner);
-        }else if(computerScore > humanScore){
-            finalWinner.textContent = 'Game Over : You Lose';
-            document.body.appendChild(finalWinner);
-        } else {
-            finalWinner.textContent = 'Game Ends In A Draw';
-            document.body.appendChild(finalWinner);
-        }
-    }
+    disableBtns()
     console.log(humanScore)
     console.log(computerScore)
     console.log(drawScore)
@@ -38,21 +24,7 @@ rockBtn.addEventListener('click', (e) => {
 paperBtn.addEventListener('click', (e) => {
     let humanChoice = e.target.id;
     playRound(humanChoice, getComputerChoice());
-    if(numberofRounds == 5){
-        rockBtn.disabled = true;
-        paperBtn.disabled = true;
-        scissorsBtn.disabled = true;
-        if(humanScore > computerScore){
-            finalWinner.textContent = 'Game Over : You WIN!'
-            document.body.appendChild(finalWinner);
-        }else if(computerScore > humanScore){
-            finalWinner.textContent = 'Game Over : You Lose';
-            document.body.appendChild(finalWinner);
-        } else {
-            finalWinner.textContent = 'Game Ends In A Draw';
-            document.body.appendChild(finalWinner);
-        }
-    }
+    disableBtns()
     console.log(humanScore)
     console.log(computerScore)
     console.log(drawScore)
@@ -61,21 +33,7 @@ paperBtn.addEventListener('click', (e) => {
 scissorsBtn.addEventListener('click', (e) => {
     let humanChoice = e.target.id;
     playRound(humanChoice, getComputerChoice());
-    if(numberofRounds == 5){
-        rockBtn.disabled = true;
-        paperBtn.disabled = true;
-        scissorsBtn.disabled = true;
-        if(humanScore > computerScore){
-            finalWinner.textContent = 'Game Over : You WIN!'
-            document.body.appendChild(finalWinner);
-        }else if(computerScore > humanScore){
-            finalWinner.textContent = 'Game Over : You Lose';
-            document.body.appendChild(finalWinner);
-        } else {
-            finalWinner.textContent = 'Game Ends In A Draw';
-            document.body.appendChild(finalWinner);
-        }
-    }
+    disableBtns()
     console.log(humanScore)
     console.log(computerScore)
     console.log(drawScore)
@@ -146,11 +104,24 @@ function getComputerChoice() {
     return arr[randomValue]
 }
 
-function getHumanChoice() {
-    let userChoice = prompt('Enter a value')
-    console.log(`My Pick: ${userChoice}`)
-    return userChoice
+function disableBtns(){
+    if(numberofRounds == 5){
+        rockBtn.disabled = true;
+        paperBtn.disabled = true;
+        scissorsBtn.disabled = true;
+        if(humanScore > computerScore){
+            finalWinner.textContent = 'Game Over : You WIN!'
+            document.body.appendChild(finalWinner);
+        }else if(computerScore > humanScore){
+            finalWinner.textContent = 'Game Over : You Lose';
+            document.body.appendChild(finalWinner);
+        } else {
+            finalWinner.textContent = 'Game Over : Game Ends In A Draw';
+            document.body.appendChild(finalWinner);
+        }
+    }
 }
+
 
 // You can add a last feature when announcing the final winner
 // use a timeout to display Game over, announce winner, and lastly number of final scores
