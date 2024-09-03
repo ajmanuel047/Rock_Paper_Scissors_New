@@ -9,12 +9,15 @@ let output = document.getElementById('output');
 let rounds = document.getElementById('rounds');
 let roundsOutput = document.getElementById('roundOupt');
 let roundsToPlay = document.getElementById('rounds_to_play');
+let finalWinner = document.getElementById('finalWinner');
+
 
 rockBtn.addEventListener('click', (e) => {
     let humanChoice = e.target.id
     playRound(humanChoice, getComputerChoice());
     if(numberofRounds == 2){
-        output.textContent = 'Game Over'
+        finalWinner.textContent = 'Game Over';
+        document.body.appendChild(finalWinner);
         rockBtn.disabled = true;
         paperBtn.disabled = true;
         scissorsBtn.disabled = true;
@@ -28,7 +31,8 @@ paperBtn.addEventListener('click', (e) => {
     let humanChoice = e.target.id;
     playRound(humanChoice, getComputerChoice());
         if(numberofRounds == 2){
-        output.textContent = 'Game Over'
+        finalWinner.textContent = 'Game Over';
+        document.body.appendChild(finalWinner);
         rockBtn.disabled = true;
         paperBtn.disabled = true;
         scissorsBtn.disabled = true;
@@ -42,7 +46,8 @@ scissorsBtn.addEventListener('click', (e) => {
     let humanChoice = e.target.id;
     playRound(humanChoice, getComputerChoice());
     if(numberofRounds == 2){
-        output.textContent = 'Game Over'
+        finalWinner.textContent = 'Game Over';
+        document.body.appendChild(finalWinner);
         rockBtn.disabled = true;
         paperBtn.disabled = true;
         scissorsBtn.disabled = true;
@@ -123,7 +128,8 @@ function getHumanChoice() {
     return userChoice
 }
 
-
+// You can add a last feature when announcing the final winner
+// use a timeout to display Game over, announce winner, and lastly number of final scores
 
 
 // function playGame() {
