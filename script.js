@@ -8,10 +8,17 @@ let scissorsBtn = document.getElementById('scissors');
 let output = document.getElementById('output');
 let rounds = document.getElementById('rounds');
 let roundsOutput = document.getElementById('roundOupt');
+let roundsToPlay = document.getElementById('rounds_to_play');
 
 rockBtn.addEventListener('click', (e) => {
     let humanChoice = e.target.id
     playRound(humanChoice, getComputerChoice());
+    if(numberofRounds == 2){
+        output.textContent = 'Game Over'
+        rockBtn.disabled = true;
+        paperBtn.disabled = true;
+        scissorsBtn.disabled = true;
+    }
     console.log(humanScore)
     console.log(computerScore)
     console.log(drawScore)
@@ -20,6 +27,12 @@ rockBtn.addEventListener('click', (e) => {
 paperBtn.addEventListener('click', (e) => {
     let humanChoice = e.target.id;
     playRound(humanChoice, getComputerChoice());
+        if(numberofRounds == 2){
+        output.textContent = 'Game Over'
+        rockBtn.disabled = true;
+        paperBtn.disabled = true;
+        scissorsBtn.disabled = true;
+    }
     console.log(humanScore)
     console.log(computerScore)
     console.log(drawScore)
@@ -28,6 +41,12 @@ paperBtn.addEventListener('click', (e) => {
 scissorsBtn.addEventListener('click', (e) => {
     let humanChoice = e.target.id;
     playRound(humanChoice, getComputerChoice());
+    if(numberofRounds == 2){
+        output.textContent = 'Game Over'
+        rockBtn.disabled = true;
+        paperBtn.disabled = true;
+        scissorsBtn.disabled = true;
+    }
     console.log(humanScore)
     console.log(computerScore)
     console.log(drawScore)
