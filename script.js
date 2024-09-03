@@ -1,7 +1,11 @@
 let humanScore = 0;
 let computerScore = 0;
 let drawScore = 0;
+let rockBtn = document.getElementById('rock');
 
+rockBtn.addEventListener('click', ()=> {
+    
+})
 
 function getComputerChoice() {
     let arr = ['rock', 'paper', 'scissors'];
@@ -17,57 +21,56 @@ function getHumanChoice() {
 }
 
 function playRound(humanChoice, computerChoice) {
-    let humanChoiceToLowerCase = humanChoice.toLowerCase()
     let lose = 'You lose! Paper beats Rock';
     let win = 'You Win!';
     let draw = 'Draw!'
-    if (humanChoiceToLowerCase == computerChoice) {
+    if (humanChoice == computerChoice) {
         drawScore++
         console.log(draw)
     }
-    if (humanChoiceToLowerCase == 'rock' && computerChoice == 'scissors') {
-        console.log(`You Win: ${humanChoiceToLowerCase} crushes ${computerChoice}`)
+    if (humanChoice == 'rock' && computerChoice == 'scissors') {
+        console.log(`You Win: ${humanChoice} crushes ${computerChoice}`)
         humanScore++
-    } else if (humanChoiceToLowerCase == 'rock' && computerChoice == 'paper') {
-        console.log(`You lose: ${computerChoice} covers ${humanChoiceToLowerCase}`)
+    } else if (humanChoice == 'rock' && computerChoice == 'paper') {
+        console.log(`You lose: ${computerChoice} covers ${humanChoice}`)
         computerScore++
-    } else if (humanChoiceToLowerCase == 'paper' && computerChoice == 'rock') {
-        console.log(`You Win: ${humanChoiceToLowerCase} covers ${computerChoice}`)
+    } else if (humanChoice == 'paper' && computerChoice == 'rock') {
+        console.log(`You Win: ${humanChoice} covers ${computerChoice}`)
         humanScore++
-    } else if (humanChoiceToLowerCase == 'paper' && computerChoice == 'scissors') {
-        console.log(`You lose: ${computerChoice} cuts ${humanChoiceToLowerCase}`)
+    } else if (humanChoice == 'paper' && computerChoice == 'scissors') {
+        console.log(`You lose: ${computerChoice} cuts ${humanChoice}`)
         computerScore++
-    } else if (humanChoiceToLowerCase == 'scissors' && computerChoice == 'paper') {
-        console.log(`You Win: ${humanChoiceToLowerCase} cuts ${computerChoice}`)
+    } else if (humanChoice == 'scissors' && computerChoice == 'paper') {
+        console.log(`You Win: ${humanChoice} cuts ${computerChoice}`)
         humanScore++
-    } else if (humanChoiceToLowerCase == 'scissors' && computerChoice == 'rock') {
-        console.log(`You lose: ${computerChoice} crushes ${humanChoiceToLowerCase}`)
+    } else if (humanChoice == 'scissors' && computerChoice == 'rock') {
+        console.log(`You lose: ${computerChoice} crushes ${humanChoice}`)
         computerScore++
     }
 }
 
 
-function playGame() {
-    console.clear()
-    for (let i = 1; i < 6; i++) {
+// function playGame() {
+//     console.clear()
+//     for (let i = 1; i < 6; i++) {
         
-        playRound(getHumanChoice(), getComputerChoice())
-        console.log(`HumanScore: ${humanScore}`)
-        console.log(`ComputerScore: ${computerScore}`)
-        console.log(`DrawScore: ${drawScore}`)
-        console.log(`Round : ${i}`)
-        console.log('-------------------'); // Separator for clarity
-    }
-    if(humanScore > computerScore){
-        console.log('You WIN!')
-    }else if(computerScore > humanScore){
-        console.log('You Lose')
-        console.log('AI WINS')
-    }else{
-        console.log('This Game Ended In A Draw')
-    }
-}
+//         playRound(getHumanChoice(), getComputerChoice())
+//         console.log(`HumanScore: ${humanScore}`)
+//         console.log(`ComputerScore: ${computerScore}`)
+//         console.log(`DrawScore: ${drawScore}`)
+//         console.log(`Round : ${i}`)
+//         console.log('-------------------'); // Separator for clarity
+//     }
+//     if(humanScore > computerScore){
+//         console.log('You WIN!') 
+//     }else if(computerScore > humanScore){
+//         console.log('You Lose')
+//         console.log('AI WINS')
+//     }else{
+//         console.log('This Game Ended In A Draw')
+//     }
+// }
 
 
-playGame()
+// playGame()
 
