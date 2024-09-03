@@ -3,20 +3,32 @@ let computerScore = 0;
 let drawScore = 0;
 let rockBtn = document.getElementById('rock');
 let paperBtn = document.getElementById('paper');
-let scissorsBtn = document.getElementById('scissors')
+let scissorsBtn = document.getElementById('scissors');
+let output = document.getElementById('output');
+
+
 rockBtn.addEventListener('click', (e) => {
     let humanChoice = e.target.id
     playRound(humanChoice, getComputerChoice());
+    console.log(humanScore)
+    console.log(computerScore)
+    console.log(drawScore)
 })
 
 paperBtn.addEventListener('click', (e) => {
     let humanChoice = e.target.id;
     playRound(humanChoice, getComputerChoice());
+    console.log(humanScore)
+    console.log(computerScore)
+    console.log(drawScore)
 })
 
 scissorsBtn.addEventListener('click', (e) => {
     let humanChoice = e.target.id;
     playRound(humanChoice, getComputerChoice());
+    console.log(humanScore)
+    console.log(computerScore)
+    console.log(drawScore)
 })
 
 function playRound(humanChoice, computerChoice) {
@@ -27,25 +39,31 @@ function playRound(humanChoice, computerChoice) {
     let draw = 'Draw!'
     if (humanChoice == computerChoice) {
         drawScore++
-        console.log(draw)
+        output.textContent = draw;
+        document.body.appendChild(output)
     }
     if (humanChoice == 'rock' && computerChoice == 'scissors') {
-        console.log(`You Win: ${humanChoice} crushes ${computerChoice}`)
+        output.textContent = `You Win: ${humanChoice} crushes ${computerChoice}`;
+        document.body.appendChild(output);
         humanScore++
     } else if (humanChoice == 'rock' && computerChoice == 'paper') {
-        console.log(`You lose: ${computerChoice} covers ${humanChoice}`)
+        output.textContent = `You lose: ${computerChoice} covers ${humanChoice}`;
+        document.body.appendChild(output)
         computerScore++
     } else if (humanChoice == 'paper' && computerChoice == 'rock') {
-        console.log(`You Win: ${humanChoice} covers ${computerChoice}`)
+        output.textContent = `You Win: ${humanChoice} covers ${computerChoice}`;
+        document.body.appendChild(output)
         humanScore++
     } else if (humanChoice == 'paper' && computerChoice == 'scissors') {
-        console.log(`You lose: ${computerChoice} cuts ${humanChoice}`)
+        output.textContent = `You lose: ${computerChoice} cuts ${humanChoice}`;
+        document.body.appendChild(output)
         computerScore++
     } else if (humanChoice == 'scissors' && computerChoice == 'paper') {
-        console.log(`You Win: ${humanChoice} cuts ${computerChoice}`)
+        output.textContent = `You Win: ${humanChoice} cuts ${computerChoice}`;
+        document.body.appendChild(output)
         humanScore++
     } else if (humanChoice == 'scissors' && computerChoice == 'rock') {
-        console.log(`You lose: ${computerChoice} crushes ${humanChoice}`)
+       output.textContent = `You lose: ${computerChoice} crushes ${humanChoice}`;
         computerScore++
     }
 }
