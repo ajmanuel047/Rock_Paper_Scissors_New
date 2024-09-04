@@ -7,15 +7,20 @@ let paperBtn = document.getElementById('paper');
 let scissorsBtn = document.getElementById('scissors');
 let output = document.getElementById('output');
 let rounds = document.getElementById('rounds');
-let roundsOutput = document.getElementById('roundOupt');
+let roundsOutput = document.getElementById('roundOutPut');
 let roundsToPlay = document.getElementById('rounds_to_play');
 let finalWinner = document.getElementById('finalWinner');
-
+let displayHumanScore = document.getElementById('userScore');
+let humanScoreValue = document.getElementById('humanScoreValue')
+let displayComputerScore = document.getElementById('computerScore');
+let displayedDrawScore = document.getElementById('draw');
+let displayDrawScore = document.getElementById('displayDrawScore');
 
 rockBtn.addEventListener('click', (e) => {
     let humanChoice = e.target.id
     playRound(humanChoice, getComputerChoice());
-    disableBtns()
+    disableBtns();
+ 
     console.log(humanScore)
     console.log(computerScore)
     console.log(drawScore)
@@ -48,10 +53,16 @@ function playRound(humanChoice, computerChoice) {
     if (humanChoice == computerChoice) {
         numberofRounds++;
         drawScore++;
+
         output.textContent = draw;
         document.body.appendChild(output);
+
         roundsOutput.textContent = `${numberofRounds}`;
         rounds.appendChild(roundsOutput);
+        
+        displayedDrawScore.textContent = drawScore;
+        displayDrawScore.appendChild(displayedDrawScore);        
+        
     }
     if (humanChoice == 'rock' && computerChoice == 'scissors') {
         output.textContent = `You Win: ${humanChoice} crushes ${computerChoice}`;
@@ -122,7 +133,7 @@ function disableBtns(){
     }
 }
 
-
+// display computer's pick
 // You can add a last feature when announcing the final winner
 // use a timeout to display Game over, announce winner, and lastly number of final scores
 // when you get to last round, change the output to Last round : then put the result of that play

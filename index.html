@@ -4,16 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button id="rounds_to_play">Please Select Number of Rounds To Play</button>
+    <button id="rounds_to_play">Please Select Number of Rounds For New Game</button>
     <div>
         <button id="rock">Rock</button>
         <button id="paper">Paper</button>
         <button id="scissors">Scissors</button>
     </div>
-    <div id="rounds">Number of Rounds : <span id="roundOupt"></span> </div>
+    <div id="rounds">Number of Rounds : <span id="roundOutPut"></span> </div>
+    <div>
+        <div id="userScore">My Score : <span id="humanValue">0</span></div>
+        <div>Computer Score : <span  id="computerScore">0</span></div>
+        <div id="displayDrawScore">Draw Score : <span  id="draw">0</span></div>
+    </div>
+     
     <div id="output"></div>
+    <div id="finalWinner"></div>
     <!-- <button id="play">Play Game</button> -->
     <script src="script.js"></script>
 </body>
