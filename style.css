@@ -23,16 +23,16 @@ body {
 }
 
 #roundWinner {
-    background-color: green;
+    background-color: #F2C94C;
     text-align: center;
     font-size: 1.3rem;
     padding: 10px;
     width: 90%;
     margin: auto;
+    
 }
 
 #gameWinner {
-    background-color: pink;
     text-align: center;
     margin-top: 110px;
     font-size: 3rem;
@@ -50,6 +50,7 @@ hr {
     font-size: 1.5rem;
     padding: 10px;
 }
+
 #upperHalf {
     flex: 1;
 }
@@ -69,5 +70,8 @@ hr {
 }
 
 
-
+#roundWinner, #output  {
+    color: #222222;
+    font-weight: bold;
+}
 
