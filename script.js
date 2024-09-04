@@ -19,7 +19,7 @@ let displayDrawScore = document.getElementById('displayDrawScore');
 let displayComputersPick = document.getElementById('displayComputersPick');
 let computersPick = document.getElementById('computer_pick');
 let roundWinner = document.getElementById('roundWinner')
-
+let gameWinner = document.getElementById('gameWinner')
 
 function getComputerChoice() {
     let arr = ['rock', 'paper', 'scissors'];
@@ -164,13 +164,13 @@ function disableBtns(){
         scissorsBtn.disabled = true;
         if(humanScore > computerScore){
             finalWinner.textContent = 'Game Over : You WIN!'
-            document.body.appendChild(finalWinner);
+            gameWinner.appendChild(finalWinner);
         }else if(computerScore > humanScore){
             finalWinner.textContent = 'Game Over : You Lose';
-            document.body.appendChild(finalWinner);
+            gameWinner.appendChild(finalWinner);
         } else {
             finalWinner.textContent = 'Game Over : Game Ends In A Draw';
-            document.body.appendChild(finalWinner);
+            gameWinner.appendChild(finalWinner);
         }
     }
 }
