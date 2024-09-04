@@ -8,27 +8,32 @@
     <link rel="stylesheet" href="stylereset.css">
 </head>
 <body>
+<div id="upperHalf">
     <button id="rounds_to_play">Please Select Number of Rounds For New Game</button>
     <div id="displayComputersPick">Computer's Pick : <span id="computer_pick"></span></div>
+    <hr/>
     <div id="rounds">Number of Rounds : <span id="roundOutPut"></span> </div>
-    <div>
+    <hr>
+    <div id="scores">
         <div id="userScore">My Score : <span id="humanValue">0</span></div>
         <div id="displayComputerScore">Computer Score : <span  id="computerValue">0</span></div>
         <div id="displayDrawScore">Draw Score : <span  id="draw">0</span></div>
     </div>
-     
+     <hr>
     <div id="roundWinner"> Round Winner : 
         <span id="output"></span>
     </div>
     <div id="gameWinner">
         <span id="finalWinner"></span>
     </div>
+</div>
     
-    <div>
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
-    </div>
+<div id="userButtons">
+  <button id="rock">Rock</button>
+  <button id="paper">Paper</button>
+  <button id="scissors">Scissors</button>
+</div>
+</div>
     <script src="script.js"></script>
 </body>
 </html>
