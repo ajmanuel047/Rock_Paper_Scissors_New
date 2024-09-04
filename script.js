@@ -12,7 +12,8 @@ let roundsToPlay = document.getElementById('rounds_to_play');
 let finalWinner = document.getElementById('finalWinner');
 let displayHumanScore = document.getElementById('userScore');
 let humanScoreValue = document.getElementById('humanValue')
-let displayComputerScore = document.getElementById('computerScore');
+let displayComputerScore = document.getElementById('displayComputerScore');
+let computerScoreValue = document.getElementById('computerValue');
 let displayedDrawScore = document.getElementById('draw');
 let displayDrawScore = document.getElementById('displayDrawScore');
 
@@ -81,6 +82,8 @@ function playRound(humanChoice, computerChoice) {
         computerScore++;
         roundsOutput.textContent = `${numberofRounds}`;
         rounds.appendChild(roundsOutput);
+        computerScoreValue.textContent = computerScore;
+        displayComputerScore.appendChild(computerScoreValue);
     } else if (humanChoice == 'paper' && computerChoice == 'rock') {
         output.textContent = `You Win: ${humanChoice} covers ${computerChoice}`;
         document.body.appendChild(output);
@@ -97,6 +100,8 @@ function playRound(humanChoice, computerChoice) {
         computerScore++;
         roundsOutput.textContent = `${numberofRounds}`;
         rounds.appendChild(roundsOutput);
+        computerScoreValue.textContent = computerScore;
+        displayComputerScore.appendChild(computerScoreValue);
     } else if (humanChoice == 'scissors' && computerChoice == 'paper') {
         output.textContent = `You Win: ${humanChoice} cuts ${computerChoice}`;
         document.body.appendChild(output)
@@ -112,7 +117,9 @@ function playRound(humanChoice, computerChoice) {
        computerScore++;
        roundsOutput.textContent = `${numberofRounds}`;
        rounds.appendChild(roundsOutput);
-    }
+       computerScoreValue.textContent = computerScore;
+       displayComputerScore.appendChild(computerScoreValue);
+    } 
 }
 
 function getComputerChoice() {
