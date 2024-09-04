@@ -18,19 +18,14 @@ let displayedDrawScore = document.getElementById('draw');
 let displayDrawScore = document.getElementById('displayDrawScore');
 let displayComputersPick = document.getElementById('displayComputersPick');
 let computersPick = document.getElementById('computer_pick');
-
+let roundWinner = document.getElementById('roundWinner')
 
 
 function getComputerChoice() {
     let arr = ['rock', 'paper', 'scissors'];
     let randomValue = Math.floor(Math.random(arr[arr.length - 1]) * arr.length)
-    console.log(`Computer's Pick: ${arr[randomValue]}`)
     return arr[randomValue]
 }
-
-
-
-
 
 rockBtn.addEventListener('click', (e) => {
     let aiChoice = getComputerChoice();
@@ -64,13 +59,14 @@ scissorsBtn.addEventListener('click', (e) => {
 
 function playRound(humanChoice, computerChoice) {
     let draw = 'Draw!';
-    
+
     if (humanChoice == computerChoice) {
         numberofRounds++;
         drawScore++;
 
         output.textContent = draw;
-        document.body.appendChild(output);
+        roundWinner.appendChild(output)
+        // document.body.appendChild(output);
 
         roundsOutput.textContent = `${numberofRounds}`;
         rounds.appendChild(roundsOutput);
@@ -80,8 +76,9 @@ function playRound(humanChoice, computerChoice) {
         
     }
     if (humanChoice == 'rock' && computerChoice == 'scissors') {
-        output.textContent = `You Win: ${humanChoice} crushes ${computerChoice}`;
-        document.body.appendChild(output);
+        output.textContent = `You Win because ${humanChoice} crushes ${computerChoice}`;
+        roundWinner.appendChild(output)
+        // document.body.appendChild(output);
         numberofRounds++;
         humanScore++;
 
@@ -92,8 +89,9 @@ function playRound(humanChoice, computerChoice) {
         displayHumanScore.appendChild(humanScoreValue);
 
     } else if (humanChoice == 'rock' && computerChoice == 'paper') {
-        output.textContent = `You lose: ${computerChoice} covers ${humanChoice}`;
-        document.body.appendChild(output)
+        output.textContent = `You lose because ${computerChoice} covers ${humanChoice}`;
+        roundWinner.appendChild(output)
+        // document.body.appendChild(output)
         numberofRounds++;
         computerScore++;
 
@@ -104,8 +102,9 @@ function playRound(humanChoice, computerChoice) {
         displayComputerScore.appendChild(computerScoreValue);
 
     } else if (humanChoice == 'paper' && computerChoice == 'rock') {
-        output.textContent = `You Win: ${humanChoice} covers ${computerChoice}`;
-        document.body.appendChild(output);
+        output.textContent = `You Win because ${humanChoice} covers ${computerChoice}`;
+        roundWinner.appendChild(output)
+        // document.body.appendChild(output);
         numberofRounds++;
         humanScore++;
 
@@ -116,8 +115,9 @@ function playRound(humanChoice, computerChoice) {
         displayHumanScore.appendChild(humanScoreValue);
 
     } else if (humanChoice == 'paper' && computerChoice == 'scissors') {
-        output.textContent = `You lose: ${computerChoice} cuts ${humanChoice}`;
-        document.body.appendChild(output)
+        output.textContent = `You lose because ${computerChoice} cuts ${humanChoice}`;
+        roundWinner.appendChild(output)
+        // document.body.appendChild(output)
         numberofRounds++;
         computerScore++;
 
@@ -128,8 +128,9 @@ function playRound(humanChoice, computerChoice) {
         displayComputerScore.appendChild(computerScoreValue);
 
     } else if (humanChoice == 'scissors' && computerChoice == 'paper') {
-        output.textContent = `You Win: ${humanChoice} cuts ${computerChoice}`;
-        document.body.appendChild(output)
+        output.textContent = `You Win because ${humanChoice} cuts ${computerChoice}`;
+        roundWinner.appendChild(output)
+        // document.body.appendChild(output)
         numberofRounds++;
         humanScore++;
 
@@ -140,7 +141,8 @@ function playRound(humanChoice, computerChoice) {
         displayHumanScore.appendChild(humanScoreValue);
 
     } else if (humanChoice == 'scissors' && computerChoice == 'rock') {
-       output.textContent = `You lose: ${computerChoice} crushes ${humanChoice}`;
+       output.textContent = `You lose because ${computerChoice} crushes ${humanChoice}`;
+       roundWinner.appendChild(output)
        numberofRounds++; 
        computerScore++;
 
@@ -156,7 +158,7 @@ function playRound(humanChoice, computerChoice) {
 
 
 function disableBtns(){
-    if(numberofRounds == 10){
+    if(numberofRounds == 5){
         rockBtn.disabled = true;
         paperBtn.disabled = true;
         scissorsBtn.disabled = true;
@@ -178,4 +180,7 @@ function disableBtns(){
 // use a timeout to display Game over, announce winner, and lastly number of final scores
 // when you get to last round, change the output to Last round : then put the result of that play
 // if statements should be able to handle the above
+// the button to select number of arounds should be highlighted for a new game
+// as soon as the game starts you disable that button.
+// as soon as it ends when it announces the winner you enable the button so it can be clicked to start a new game
 

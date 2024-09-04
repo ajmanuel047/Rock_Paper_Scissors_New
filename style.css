@@ -1,1 +1,10 @@
-/* give each score a different color */
+body {
+    background-color: #111827;
+}
+
+#computer_pick, #displayComputersPick, #rounds, #userScore, #displayComputerScore, #displayDrawScore, #output, #finalWinner, #roundWinner {
+    color: white;
+}
+
+
+
