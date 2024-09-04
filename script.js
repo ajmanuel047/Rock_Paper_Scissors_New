@@ -16,31 +16,53 @@ let displayComputerScore = document.getElementById('displayComputerScore');
 let computerScoreValue = document.getElementById('computerValue');
 let displayedDrawScore = document.getElementById('draw');
 let displayDrawScore = document.getElementById('displayDrawScore');
+let displayComputersPick = document.getElementById('displayComputersPick');
+let computersPick = document.getElementById('computer_pick');
+
+
+
+function getComputerChoice() {
+    let arr = ['rock', 'paper', 'scissors'];
+    let randomValue = Math.floor(Math.random(arr[arr.length - 1]) * arr.length)
+    console.log(`Computer's Pick: ${arr[randomValue]}`)
+    return arr[randomValue]
+}
+
+
+
 
 
 rockBtn.addEventListener('click', (e) => {
+    let aiChoice = getComputerChoice();
     let humanChoice = e.target.id
-    playRound(humanChoice, getComputerChoice());
+    playRound(humanChoice, aiChoice);
     disableBtns();
- 
+    computersPick.textContent = aiChoice;
+    displayComputersPick.appendChild(computersPick);
     console.log(humanScore)
     console.log(computerScore)
     console.log(drawScore)
 })
 
 paperBtn.addEventListener('click', (e) => {
+    let aiChoice = getComputerChoice();
     let humanChoice = e.target.id;
-    playRound(humanChoice, getComputerChoice());
+    playRound(humanChoice, aiChoice);
     disableBtns()
+    computersPick.textContent = aiChoice;
+displayComputersPick.appendChild(computersPick);
     console.log(humanScore)
     console.log(computerScore)
     console.log(drawScore)
 })
 
 scissorsBtn.addEventListener('click', (e) => {
+    let aiChoice = getComputerChoice();
     let humanChoice = e.target.id;
-    playRound(humanChoice, getComputerChoice());
+    playRound(humanChoice, aiChoice);
     disableBtns()
+    computersPick.textContent = aiChoice;
+displayComputersPick.appendChild(computersPick);
     console.log(humanScore)
     console.log(computerScore)
     console.log(drawScore)
@@ -122,15 +144,10 @@ function playRound(humanChoice, computerChoice) {
     } 
 }
 
-function getComputerChoice() {
-    let arr = ['rock', 'paper', 'scissors'];
-    let randomValue = Math.floor(Math.random(arr[arr.length - 1]) * arr.length)
-    console.log(`Computer's Pick: ${arr[randomValue]}`)
-    return arr[randomValue]
-}
+
 
 function disableBtns(){
-    if(numberofRounds == 5){
+    if(numberofRounds == 10){
         rockBtn.disabled = true;
         paperBtn.disabled = true;
         scissorsBtn.disabled = true;
