@@ -11,10 +11,11 @@ let roundsOutput = document.getElementById('roundOutPut');
 let roundsToPlay = document.getElementById('rounds_to_play');
 let finalWinner = document.getElementById('finalWinner');
 let displayHumanScore = document.getElementById('userScore');
-let humanScoreValue = document.getElementById('humanScoreValue')
+let humanScoreValue = document.getElementById('humanValue')
 let displayComputerScore = document.getElementById('computerScore');
 let displayedDrawScore = document.getElementById('draw');
 let displayDrawScore = document.getElementById('displayDrawScore');
+
 
 rockBtn.addEventListener('click', (e) => {
     let humanChoice = e.target.id
@@ -71,6 +72,8 @@ function playRound(humanChoice, computerChoice) {
         humanScore++;
         roundsOutput.textContent = `${numberofRounds}`;
         rounds.appendChild(roundsOutput);
+        humanScoreValue.textContent = humanScore;
+        displayHumanScore.appendChild(humanScoreValue);
     } else if (humanChoice == 'rock' && computerChoice == 'paper') {
         output.textContent = `You lose: ${computerChoice} covers ${humanChoice}`;
         document.body.appendChild(output)
@@ -85,6 +88,8 @@ function playRound(humanChoice, computerChoice) {
         humanScore++;
         roundsOutput.textContent = `${numberofRounds}`;
         rounds.appendChild(roundsOutput);
+        humanScoreValue.textContent = humanScore;
+        displayHumanScore.appendChild(humanScoreValue);
     } else if (humanChoice == 'paper' && computerChoice == 'scissors') {
         output.textContent = `You lose: ${computerChoice} cuts ${humanChoice}`;
         document.body.appendChild(output)
@@ -99,6 +104,8 @@ function playRound(humanChoice, computerChoice) {
         humanScore++;
         roundsOutput.textContent = `${numberofRounds}`;
         rounds.appendChild(roundsOutput);
+        humanScoreValue.textContent = humanScore;
+        displayHumanScore.appendChild(humanScoreValue);
     } else if (humanChoice == 'scissors' && computerChoice == 'rock') {
        output.textContent = `You lose: ${computerChoice} crushes ${humanChoice}`;
        numberofRounds++; 
