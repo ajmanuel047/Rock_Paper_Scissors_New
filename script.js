@@ -34,14 +34,12 @@ function getComputerChoice() {
 
 rockBtn.addEventListener('click', (e) => {
     let aiChoice = getComputerChoice();
-    let humanChoice = e.target.id
+    let humanChoice = e.target.id;
     playRound(humanChoice, aiChoice);
     disableBtns();
     computersPick.textContent = aiChoice;
     displayComputersPick.appendChild(computersPick);
-    console.log(humanScore)
-    console.log(computerScore)
-    console.log(drawScore)
+
 })
 
 paperBtn.addEventListener('click', (e) => {
@@ -50,10 +48,8 @@ paperBtn.addEventListener('click', (e) => {
     playRound(humanChoice, aiChoice);
     disableBtns()
     computersPick.textContent = aiChoice;
-displayComputersPick.appendChild(computersPick);
-    console.log(humanScore)
-    console.log(computerScore)
-    console.log(drawScore)
+    displayComputersPick.appendChild(computersPick);
+
 })
 
 scissorsBtn.addEventListener('click', (e) => {
@@ -62,18 +58,13 @@ scissorsBtn.addEventListener('click', (e) => {
     playRound(humanChoice, aiChoice);
     disableBtns()
     computersPick.textContent = aiChoice;
-displayComputersPick.appendChild(computersPick);
-    console.log(humanScore)
-    console.log(computerScore)
-    console.log(drawScore)
+    displayComputersPick.appendChild(computersPick);
+
 })
 
 function playRound(humanChoice, computerChoice) {
-    console.log(`My choice : ${humanChoice}`);
-    console.log(`Computer's choice: ${computerChoice}`);
-    let lose = 'You lose! Paper beats Rock';
-    let win = 'You Win!';
-    let draw = 'Draw!'
+    let draw = 'Draw!';
+    
     if (humanChoice == computerChoice) {
         numberofRounds++;
         drawScore++;
@@ -93,54 +84,72 @@ function playRound(humanChoice, computerChoice) {
         document.body.appendChild(output);
         numberofRounds++;
         humanScore++;
+
         roundsOutput.textContent = `${numberofRounds}`;
         rounds.appendChild(roundsOutput);
+
         humanScoreValue.textContent = humanScore;
         displayHumanScore.appendChild(humanScoreValue);
+
     } else if (humanChoice == 'rock' && computerChoice == 'paper') {
         output.textContent = `You lose: ${computerChoice} covers ${humanChoice}`;
         document.body.appendChild(output)
         numberofRounds++;
         computerScore++;
+
         roundsOutput.textContent = `${numberofRounds}`;
         rounds.appendChild(roundsOutput);
+
         computerScoreValue.textContent = computerScore;
         displayComputerScore.appendChild(computerScoreValue);
+
     } else if (humanChoice == 'paper' && computerChoice == 'rock') {
         output.textContent = `You Win: ${humanChoice} covers ${computerChoice}`;
         document.body.appendChild(output);
         numberofRounds++;
         humanScore++;
+
         roundsOutput.textContent = `${numberofRounds}`;
         rounds.appendChild(roundsOutput);
+
         humanScoreValue.textContent = humanScore;
         displayHumanScore.appendChild(humanScoreValue);
+
     } else if (humanChoice == 'paper' && computerChoice == 'scissors') {
         output.textContent = `You lose: ${computerChoice} cuts ${humanChoice}`;
         document.body.appendChild(output)
         numberofRounds++;
         computerScore++;
+
         roundsOutput.textContent = `${numberofRounds}`;
         rounds.appendChild(roundsOutput);
+
         computerScoreValue.textContent = computerScore;
         displayComputerScore.appendChild(computerScoreValue);
+
     } else if (humanChoice == 'scissors' && computerChoice == 'paper') {
         output.textContent = `You Win: ${humanChoice} cuts ${computerChoice}`;
         document.body.appendChild(output)
         numberofRounds++;
         humanScore++;
+
         roundsOutput.textContent = `${numberofRounds}`;
         rounds.appendChild(roundsOutput);
+
         humanScoreValue.textContent = humanScore;
         displayHumanScore.appendChild(humanScoreValue);
+
     } else if (humanChoice == 'scissors' && computerChoice == 'rock') {
        output.textContent = `You lose: ${computerChoice} crushes ${humanChoice}`;
        numberofRounds++; 
        computerScore++;
+
        roundsOutput.textContent = `${numberofRounds}`;
        rounds.appendChild(roundsOutput);
+
        computerScoreValue.textContent = computerScore;
        displayComputerScore.appendChild(computerScoreValue);
+
     } 
 }
 
@@ -169,28 +178,4 @@ function disableBtns(){
 // use a timeout to display Game over, announce winner, and lastly number of final scores
 // when you get to last round, change the output to Last round : then put the result of that play
 // if statements should be able to handle the above
-
-// function playGame() {
-//     console.clear()
-//     for (let i = 1; i < 6; i++) {
-        
-//         playRound(getHumanChoice(), getComputerChoice())
-//         console.log(`HumanScore: ${humanScore}`)
-//         console.log(`ComputerScore: ${computerScore}`)
-//         console.log(`DrawScore: ${drawScore}`)
-//         console.log(`Round : ${i}`)
-//         console.log('-------------------'); // Separator for clarity
-//     }
-//     if(humanScore > computerScore){
-//         console.log('You WIN!') 
-//     }else if(computerScore > humanScore){
-//         console.log('You Lose')
-//         console.log('AI WINS')
-//     }else{
-//         console.log('This Game Ended In A Draw')
-//     }
-// }
-
-
-// playGame()
 
